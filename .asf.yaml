@@ -4,12 +4,9 @@ notifications:
   pullrequests: notifications@logging.apache.org
   jira_options: link label comment 
 
-jekyll:
-  whoami: jekyll
-  target: asf-staging
 staging:
   profile: ~
   whoami: asf-staging
-publish:
-  whoami: asf-site
-
+#publish:
+#  whoami: asf-site
+  
