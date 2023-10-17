@@ -7,3 +7,4 @@ notifications:
 staging:
   profile: ~
   whoami: asf-staging
+  subdir: output
