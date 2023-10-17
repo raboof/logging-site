@@ -5,5 +5,5 @@ notifications:
   jira_options: link label comment 
 
 staging:
-  profile: ~
+  profile: main
   whoami: asf-staging
