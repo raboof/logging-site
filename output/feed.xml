@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-10-18T18:03:56+00:00</updated><id>/feed.xml</id><title type="html">Apache Software Foundation - Logging Services</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Log4j 2.21.0 released</title><link href="/blog/2023/10/11/release.html" rel="alternate" type="text/html" title="Log4j 2.21.0 released" /><published>2023-10-11T00:00:00+00:00</published><updated>2023-10-11T00:00:00+00:00</updated><id>/blog/2023/10/11/release</id><content type="html" xml:base="/blog/2023/10/11/release.html"><![CDATA[<div class="sect1">
+<h2 id="release">Release</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Apache Log4j 2 team is pleased to announce the Log4j 2.21.0 release!</p>
+</div>
+<div class="paragraph">
+<p>It contains many improvements over the previous version. Most notably, it&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="changes">Changes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>sss</p>
+</div>
+</div>
+</div>]]></content><author><name></name></author><category term="Releases" /><category term="Log4j" /><category term="test" /><summary type="html"><![CDATA[We are pleased to announce the Log4j 2.21.0 release!]]></summary></entry></feed>
