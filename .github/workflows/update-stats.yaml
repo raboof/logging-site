@@ -32,6 +32,8 @@ jobs:
 
   collect:
 
+    name: "collect (${{ matrix.proj-spec.id }})"
+
     runs-on: ubuntu-latest
 
     strategy:
@@ -53,6 +55,7 @@ jobs:
             repo-name: apache/logging-log4j-tools
           - id: log4j-audit
             repo-name: apache/logging-log4j-audit
+            repo-branch: master
           - id: chainsaw
             repo-name: apache/logging-chainsaw
 
