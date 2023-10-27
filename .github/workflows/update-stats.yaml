@@ -17,7 +17,9 @@
 
 name: update-stats
 
-on: workflow_dispatch
+on:
+  schedule:
+    - cron: "43 7 * * *"
 
 concurrency:
   group: ${{ github.ref_name }}
