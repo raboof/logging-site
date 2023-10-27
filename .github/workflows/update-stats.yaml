@@ -144,6 +144,6 @@ jobs:
           echo project,module,instant,author >"$DATA_FILEPATH"
           find "$DOWNLOAD_DIR" -type f | xargs cat >>"$DATA_FILEPATH"
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -S "$DATA_FILEPATH" -m "Update \`$DATA_FILEPATH\`'
+            git commit -S "$DATA_FILEPATH" -m "Update \`$DATA_FILEPATH\`"
             git push -f origin
           fi
