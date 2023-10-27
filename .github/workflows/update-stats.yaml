@@ -81,16 +81,17 @@ jobs:
           find . -regextype posix-extended -name "pom.xml" -and -not -regex "(.*/)?target/.*" | while read pomXmlFilepath; do
 
             # Ignore the artifact, if it is skipped at deployment
-            grep -q "<maven.deploy.skip>true" "$pomXmlFilepath" && continue
+            skipMatchCount=$(python -c "import xml.etree.ElementTree as ET; print(len(ET.parse('$pomXmlFilepath').findall('./{*}properties/{*}maven.deploy.skip')))")
+            [ "$skipMatchCount" -gt 0 ] && continue
 
             # Extract the module name (i.e., `artifactId`)
-            module=$(awk 'match($0, /^[ \t]+<artifactId>(.+)<\/artifactId>$/, m) {print m[1]}' "$pomXmlFilepath")
+            module=$(python -c "import xml.etree.ElementTree as ET; print(ET.parse('$pomXmlFilepath').findall('./{*}artifactId')[0].text)")
 
             # Dump statistics of the module folder
             moduleDir=$(dirname "$pomXmlFilepath")
             git log --pretty=tformat:"%as %ae" -- "$moduleDir" | while read instant author; do
               echo "$PROJ_ID,$module,$instant,$author"
-            done >"$DATA_FILEPATH"
+            done >>"$DATA_FILEPATH"
 
           done
 
