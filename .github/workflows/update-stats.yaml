@@ -79,7 +79,7 @@ jobs:
         run: |
           find . -regextype posix-extended -name "pom.xml" -and -not -regex "(.*/)?target/.*" | while read pomXmlFilepath; do
 
-            # Ignore artifact which are skipped at deployment
+            # Ignore the artifact, if it is skipped at deployment
             grep -q "<maven.deploy.skip>true" "$pomXmlFilepath" && continue
 
             # Extract the module name (i.e., `artifactId`)
@@ -90,6 +90,8 @@ jobs:
             git log --pretty=tformat:"%as %ae" -- "$moduleDir" | while read instant author; do
               echo "$PROJ_ID,$module,$instant,$author"
             done >"$DATA_FILEPATH"
+
+          done
 
       - name: Upload statistics
         uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32  # 3.1.3
