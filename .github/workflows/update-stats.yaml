@@ -18,8 +18,9 @@
 name: update-stats
 
 on:
-  schedule:
-    - cron: "43 7 * * *"
+  push:
+    branches:
+      - "activity-monitor"
 
 concurrency:
   group: ${{ github.ref_name }}
