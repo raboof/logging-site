@@ -28,9 +28,6 @@ concurrency:
 
 permissions: read-all
 
-env:
-  DATA_FILEPATH: stats.csv
-
 jobs:
 
   collect:
@@ -60,6 +57,7 @@ jobs:
             repo-name: apache/logging-chainsaw
 
     env:
+      DATA_FILEPATH: stats.csv
       PROJ_ID: ${{ matrix.proj-spec.id }}
       REPO_NAME: ${{ matrix.proj-spec.repo-name }}
       REPO_BRANCH: ${{ matrix.proj-spec.repo-branch || 'main' }}
@@ -102,6 +100,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      DATA_FILEPATH: stats.csv
       DOWNLOAD_DIR: /tmp/stats
 
     steps:
