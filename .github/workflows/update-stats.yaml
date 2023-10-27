@@ -102,6 +102,8 @@ jobs:
 
   merge:
 
+    needs: collect
+
     runs-on: ubuntu-latest
 
     env:
