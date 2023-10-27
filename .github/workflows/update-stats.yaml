@@ -109,6 +109,9 @@ jobs:
     env:
       DOWNLOAD_DIR: /tmp/stats
 
+    permissions:
+      contents: write
+
     steps:
 
       # We could have rolled out our own shell script to read the GPG private key.
