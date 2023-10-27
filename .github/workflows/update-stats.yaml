@@ -58,6 +58,7 @@ jobs:
             repo-branch: master
           - id: chainsaw
             repo-name: apache/logging-chainsaw
+            repo-branch: master
 
     env:
       PROJ_ID: ${{ matrix.proj-spec.id }}
