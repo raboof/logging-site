@@ -141,8 +141,8 @@ jobs:
       - name: Merge & commit statistics
         shell: bash
         run: |
-          echo project,module,instant,author >"$DATA_FILEPATH"
-          find "$DOWNLOAD_DIR" -type f | xargs cat >>"$DATA_FILEPATH"
+          ( echo "project,module,instant,author"; find "$DOWNLOAD_DIR" -type f | xargs cat ) >"$DATA_FILEPATH"
+          git add "$DATA_FILEPATH"
           if [ -n "$(git status --porcelain)" ]; then
             git commit -S "$DATA_FILEPATH" -m "Update \`$DATA_FILEPATH\`"
             git push -f origin
