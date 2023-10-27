@@ -105,6 +105,7 @@ jobs:
 
       # We could have rolled out our own shell script to read the GPG private key.
       # Though we use `actions/setup-java` everywhere for that purpose, and it simply works.
+      # Plus, it has several security enhancements; cleanup steps for removing the private key file and the imported keychain, etc.
       - name: Set up GPG
         uses: actions/setup-java@0ab4596768b603586c0de567f2430c30f5b0d2b0   # 3.7.0
         with:
@@ -112,10 +113,6 @@ jobs:
           java-version: 17
           java-package: jdk
           architecture: x64
-          cache: maven
-          server-id: apache.releases.https
-          server-username: NEXUS_USERNAME
-          server-password: NEXUS_PASSWORD
           gpg-private-key: ${{ secrets.GPG_SECRET_KEY }}
 
       - name: Set up Git
