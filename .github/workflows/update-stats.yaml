@@ -72,6 +72,9 @@ jobs:
             repo-name: apache/logging-log4net
             repo-branch: master
             packaging: nant
+          - id: log4j-server
+            repo-name: apache/logging-log4j-server
+            repo-branch: master
 
     env:
       PROJ_ID: ${{ matrix.proj-spec.id }}
