@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apache Logging Services Project Activity Monitor</title>
+    <style>
+        #commits {
+            border-spacing: 0px;
+        }
+        #commits thead td {
+            font-weight: bold;
+            text-align: center;
+        }
+        #commits td {
+            font-size: 10pt;
+            background-color: #efefef;
+            white-space: nowrap;
+            padding: 3px;
+            margin: 0px;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Project Activity Monitor</h3>
+
+<p>
+    This page monitors project activity status of modules developed and maintained by the <a href="https://logging.apache.org/">Apache Logging Services</a>.<br/>
+    Users can leverage this information to have an idea about the maintenance status of certain projects.<br/>
+    Users depending on less maintained modules might consider stepping up for maintenance to avoid deprecation.<br/>
+</p>
+
+<p>
+    Remember, <strong>this is just data!</strong><br/>
+    How to interpret these figures depends on your use case and modules associated.
+</p>
+
+<h3>Legend</h3>
+
+<dl>
+    <dt>#Commits</dt>
+    <dd>
+        This column denotes the number of commits.<br/>
+        The bar is in log-scale.<br/>
+        Green-Black-Orange-Red coloring is performed using a commit count range of 50-30-20.
+    </dd>
+    <dt>#Authors</dt>
+    <dd>
+        This column denotes the number of <em>active</em> PMC members authoring the commits.<br/>
+        The value is analogous to <a href="https://en.wikipedia.org/wiki/Bus_factor">the bus factor</a>.<br/>
+        Note that individual contributors and inactive PMC members are discarded.
+    </dd>
+</dl>
+
+<h3>Statistics</h3>
+
+<div id="preamble">Loading...</div>
+<table id="commits">
+    <thead id="commits-head"></thead>
+    <tbody id="commits-body"></tbody>
+</table>
+
+<script src="sql-wasm.js"></script>
+<script>
+const pmcAuthorByEmail = {
+    "Ralph.Goers@dslextreme.com": "ralph",
+    "boards@gmail.com": "matt",
+    "c.matt.sicker@uptake.com": "matt",
+    "c4kofony@gmail.com": "carter",
+    "cg@grobmeier.de": "christian",
+    "ckozak@apache.org": "carter",
+    "ckozak@ckozak.net": "carter",
+    "gardgregory@gmail.com": "gary",
+    "garydgregory@gmail.com": "gary",
+    "garydgregory@users.noreply.github.com": "gary",
+    "ggregory@US-L-GG02.rocketsoftware.com": "gary",
+    "ggregory@US-L-GG05.rocketsoftware.com": "gary",
+    "ggregory@apache.org": "gary",
+    "ggregory@rocketsoftware.com": "gary",
+    "matt.sicker@spr.com": "matt",
+    "mattsicker@apache.org": "matt",
+    "mattsicker@unknown": "matt",
+    "msicker@apple.com": "matt",
+    "piotr.github@karwasz.org": "piotr",
+    "piotr.karwasz@gmail.com": "piotr",
+    "piotr.radix@karwasz.org": "piotr",
+    "ralph.goers@dslextreme.com": "ralph",
+    "remkop@yahoo.com": "remko",
+    "rgoers@apache.org": "ralph",
+    "rgoers@nextiva.com": "ralph",
+    "rm5248@users.noreply.github.com": "robert",
+    "robert.middleton@rm5248.com": "robert",
+    "rpopma@apache.org": "remko",
+    "rpopma@unknown": "remko",
+    "scott.deboy@oracle.com": "scott",
+    "sdeboy@apache.org": "scott",
+    "volkan.yazici@gmail.com": "volkan",
+    "volkan@yazi.ci": "volkan",
+}
+
+const countDistinctPmcAuthors = authorEmails => {
+    if (!authorEmails) {
+        return 0
+    }
+    const pmcAuthors = new Set()
+    for (const authorEmail of authorEmails) {
+        const pmcAuthor = pmcAuthorByEmail[authorEmail]
+        if (pmcAuthor) {
+            pmcAuthors.add(pmcAuthor)
+        }
+    }
+    return pmcAuthors.size;
+}
+
+const sqlJsConfig = { locateFile: filename => `${filename}` }
+initSqlJs(sqlJsConfig).then(SQL => {
+
+    const fetchFile = async url => {
+      return await fetch(url).then(response => response.text())
+    }
+
+    const parseCsv = data => {
+      const [header, ...lines] = data.split(/\r\n|\n/)
+      return lines.map(line => line.split(","))
+    }
+
+    // Download CSV
+    fetchFile("stats.csv").then(csvData => {
+
+        // Parse CSV
+        const csvRows = parseCsv(csvData)
+
+        // Create and populate the database table
+        const db = new SQL.Database()
+        db.run("CREATE TABLE stats (project TEXT NOT NULL, module TEXT NOT NULL, instant DATE NOT NULL, author TEXT NOT NULL)")
+        const insertStmt = db.prepare("INSERT INTO stats (project, module, instant, author) VALUES (?, ?, ?, ?)")
+        for (const csvRow of csvRows) {
+            if (csvRow.length > 1) {
+                insertStmt.run(csvRow)
+            }
+        }
+        insertStmt.free()
+
+        // Refactor data
+        const deleteConditions = [
+            "project = 'log4j-audit' AND module IN ('log4j-audit', 'log4j-audit-parent', 'log4j-catalog', 'simple-it')",
+            "project = 'log4j-2' AND module IN ('log4j', 'log4j-bom')"
+        ]
+        db.run("DELETE FROM stats WHERE " + deleteConditions.map(s => `(${s})`).join(" OR "))
+        db.run("UPDATE stats SET module = '*' WHERE project IN ('log4j-kotlin', 'log4j-scala', 'log4j-tools', 'log4j-transform')")
+
+        // Collect the date range
+        const [minYear, _1, _2, maxYear, _3, _4] = db
+            .exec("SELECT MIN(instant) || '-' || MAX(instant) FROM stats")[0]
+            .values[0][0]
+            .split('-')
+
+        // Initialize the header
+        const commitsTableHead = document.getElementById("commits-head")
+        const headRow1 = commitsTableHead.insertRow()
+        const projectCell = headRow1.insertCell()
+        projectCell.rowSpan = 2
+        projectCell.innerHTML = "Project"
+        const moduleCell = headRow1.insertCell()
+        moduleCell.rowSpan = 2
+        moduleCell.innerHTML = "Module"
+
+        // Populate year cells in the header
+        const leftBorderStyle = "border-left: 3px solid #cfcfcf"
+        for (let year = maxYear; year >= minYear; year--) {
+            const yearCell = headRow1.insertCell()
+            yearCell.colSpan = 4
+            yearCell.innerHTML = "" + year
+            yearCell.setAttribute("style", leftBorderStyle)
+        }
+
+        // Populate header cells under years
+        const headRow2 = commitsTableHead.insertRow()
+        for (let year = minYear; year <= maxYear; year++) {
+            const commitsCell = headRow2.insertCell()
+            commitsCell.colSpan = 2
+            commitsCell.innerHTML = "#Commits"
+            commitsCell.setAttribute("style", leftBorderStyle)
+            const authorsCell = headRow2.insertCell()
+            authorsCell.colSpan = 2
+            authorsCell.innerHTML = "#Authors"
+        }
+
+        // Collect min/max commit counts
+        const commitCounts = db
+            .exec("SELECT COUNT(1) FROM stats GROUP BY project, module, strftime('%Y', instant)")[0]
+            .values
+            .map(row => parseInt(row[0]))
+        const minCommitCount = Math.min(...commitCounts)
+        const maxCommitCount = Math.max(...commitCounts)
+
+        // Create `json_agg` aggregation function
+        db.create_aggregate("json_agg", {
+            init: () => [],
+            step: (state, val) => [...state, val],
+            finalize: (state) => JSON.stringify(state),
+        });
+
+        // Create query for collecting statistics
+        const statStmt = db.prepare("SELECT COUNT(1), json_agg(DISTINCT author) FROM stats WHERE project = ? AND module = ? AND instant LIKE (? || '%')")
+
+        // Define health-indicating font styles
+        const fontStyleByColor = {
+            green: "color: green",
+            black: "color: black",
+            orange: "color: orange",
+            red: "color: red"
+        }
+        const rankingFontStyle = (range, rank) => {
+            const color = rank >= range[0] ? "green" : (rank >= range[1] ? "black" : (rank >= range[2] ? "orange" : "red"))
+            return fontStyleByColor[color]
+        }
+
+        // Collect distinct project-module pairs
+        const commitsTableBody = document.getElementById("commits-body")
+        for (const moduleRow of db.exec("SELECT project, module FROM stats GROUP BY project, module ORDER BY project, module")[0].values) {
+
+            // Populate project & module name cells
+            const [project, module] = moduleRow
+            const statRow = commitsTableBody.insertRow()
+            statRow.insertCell().innerHTML = project
+            statRow.insertCell().innerHTML = module
+
+            // Populate per-year commit and committer statistics cells
+            for (let year = maxYear; year >= minYear; year--) {
+                const [commitCountString, authorEmailsString] = statStmt.get([project, module, year])
+                const commitCount = parseInt(commitCountString)
+                const authorEmails = JSON.parse(authorEmailsString)
+                const commitCountFontStyle = rankingFontStyle([50, 30, 20], commitCount)
+                const commitCountCell = statRow.insertCell()
+                commitCountCell.innerHTML = commitCountString
+                commitCountCell.setAttribute("style", `text-align: right; ${leftBorderStyle}; ${commitCountFontStyle}`)
+                const commitCountBarCell = statRow.insertCell()
+                commitCountBarCell.setAttribute("style", commitCountFontStyle)
+                commitCountBarCell.innerHTML = commitCount > 0
+                    ? "▇".repeat(1 + Math.floor(20.0 * (Math.log(commitCount) - Math.log(minCommitCount)) / (Math.log(maxCommitCount) - Math.log(minCommitCount))))
+                    : ""
+                const authorCount = countDistinctPmcAuthors(authorEmails)
+                const authorCountFontStyle = rankingFontStyle([4, 3, 2], authorCount)
+                const authorCountCell = statRow.insertCell()
+                authorCountCell.innerHTML = authorCount
+                authorCountCell.setAttribute("style", `text-align: right; ${authorCountFontStyle}`)
+                const authorCountBar = statRow.insertCell()
+                authorCountBar.setAttribute("style", authorCountFontStyle)
+                authorCountBar.innerHTML = "👨".repeat(authorCount)
+            }
+
+        }
+        statStmt.free()
+
+        // Replace the preamble
+        fetchFile("stats-instant.txt").then(instant => document.getElementById("preamble").innerHTML = `Data was collected on ${instant}.`)
+
+    })
+
+})
+</script>
+
+</body>
+</html>
