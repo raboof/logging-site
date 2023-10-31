@@ -39,12 +39,18 @@ jobs:
     strategy:
       matrix:
         proj-spec:
+          - id: log4cxx
+            repo-name: apache/logging-log4cxx
+            repo-branch: master
+            packaging: cmake
           - id: log4j-1
             repo-name: apache/logging-log4j1
             repo-branch: main
           - id: log4j-2
             repo-name: apache/logging-log4j2
             repo-branch: 2.x
+          - id: log4j-jmx-gui
+            repo-name: apache/logging-log4j-jmx-gui
           - id: log4j-kotlin
             repo-name: apache/logging-log4j-kotlin
           - id: log4j-scala
@@ -64,6 +70,7 @@ jobs:
       PROJ_ID: ${{ matrix.proj-spec.id }}
       REPO_NAME: ${{ matrix.proj-spec.repo-name }}
       REPO_BRANCH: ${{ matrix.proj-spec.repo-branch || 'main' }}
+      PROJ_PACKAGING: ${{ matrix.proj-spec.packaging || 'maven' }}
 
     steps:
 
@@ -78,22 +85,34 @@ jobs:
       - name: Collect statistics
         shell: bash
         run: |
-          find . -regextype posix-extended -name "pom.xml" -and -not -regex "(.*/)?target/.*" | while read pomXmlFilepath; do
+          case $PROJ_PACKAGING in
 
-            # Ignore the artifact, if it is skipped at deployment
-            skipMatchCount=$(python -c "import xml.etree.ElementTree as ET; print(len(ET.parse('$pomXmlFilepath').findall('./{*}properties/{*}maven.deploy.skip')))")
-            [ "$skipMatchCount" -gt 0 ] && continue
+            maven)
+              find . -regextype posix-extended -name "pom.xml" -and -not -regex "(.*/)?target/.*" | while read pomXmlFilepath; do
+    
+                # Ignore the artifact, if it is skipped at deployment
+                skipMatchCount=$(python -c "import xml.etree.ElementTree as ET; print(len(ET.parse('$pomXmlFilepath').findall('./{*}properties/{*}maven.deploy.skip')))")
+                [ "$skipMatchCount" -gt 0 ] && continue
+    
+                # Extract the module name (i.e., `artifactId`)
+                module=$(python -c "import xml.etree.ElementTree as ET; print(ET.parse('$pomXmlFilepath').findall('./{*}artifactId')[0].text)")
+    
+                # Dump statistics of the module folder
+                moduleDir=$(dirname "$pomXmlFilepath")
+                git log --pretty=tformat:"%as %ae" -- "$moduleDir" | while read instant author; do
+                  echo "$PROJ_ID,$module,$instant,$author"
+                done >>"$DATA_FILEPATH"
+    
+              done
+              ;;
 
-            # Extract the module name (i.e., `artifactId`)
-            module=$(python -c "import xml.etree.ElementTree as ET; print(ET.parse('$pomXmlFilepath').findall('./{*}artifactId')[0].text)")
+            *)
+              git log --pretty=tformat:"%as %ae" | while read instant author; do
+                echo "$PROJ_ID,*,$instant,$author"
+              done >"$DATA_FILEPATH"
+              ;;
 
-            # Dump statistics of the module folder
-            moduleDir=$(dirname "$pomXmlFilepath")
-            git log --pretty=tformat:"%as %ae" -- "$moduleDir" | while read instant author; do
-              echo "$PROJ_ID,$module,$instant,$author"
-            done >>"$DATA_FILEPATH"
-
-          done
+          esac
 
       - name: Upload statistics
         uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32  # 3.1.3
