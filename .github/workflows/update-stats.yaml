@@ -167,8 +167,10 @@ jobs:
         shell: bash
         run: |
           ( echo "project,module,instant,author"; find "$DOWNLOAD_DIR" -type f | xargs cat ) >"$DATA_FILEPATH"
-          git add "$DATA_FILEPATH"
+          export DATA_INSTANT_FILEPATH="stats-instant.txt"
+          echo -n $(date --utc "+%Y-%m-%dT%H:%M:%SZ") >"$DATA_INSTANT_FILEPATH"
+          git add "$DATA_FILEPATH" "$DATA_INSTANT_FILEPATH"
           if [ -n "$(git status --porcelain)" ]; then
-            git commit -S "$DATA_FILEPATH" -m "Update \`$DATA_FILEPATH\`"
+            git commit -S "$DATA_FILEPATH" "$DATA_INSTANT_FILEPATH" -m "Update project activity data"
             git push -f origin
           fi
