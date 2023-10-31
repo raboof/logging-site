@@ -160,7 +160,7 @@ initSqlJs(sqlJsConfig).then(SQL => {
             "project = 'log4j-2' AND module IN ('log4j', 'log4j-bom')"
         ]
         db.run("DELETE FROM stats WHERE " + deleteConditions.map(s => `(${s})`).join(" OR "))
-        db.run("UPDATE stats SET module = '*' WHERE project IN ('log4j-kotlin', 'log4j-scala', 'log4j-tools', 'log4j-transform')")
+        db.run("UPDATE stats SET module = '*' WHERE project IN ('log4j-kotlin', 'log4j-scala', 'log4j-tools', 'log4j-transform', 'log4j-server')")
 
         // Collect the date range
         const [minYear, _1, _2, maxYear, _3, _4] = db
