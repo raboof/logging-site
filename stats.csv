@@ -437,6 +437,7 @@ log4j-server,log4j-server,2017-04-21,mikael.staldal@magine.com
 log4j-server,log4j-server,2017-04-11,mikael.staldal@magine.com
 log4j-audit,log4j-catalog-editor,2023-10-31,piotr.github@karwasz.org
 log4j-audit,log4j-catalog-editor,2023-10-31,piotr.github@karwasz.org
+log4j-audit,log4j-catalog-editor,2023-10-31,piotr.github@karwasz.org
 log4j-audit,log4j-catalog-editor,2023-10-30,piotr.github@karwasz.org
 log4j-audit,log4j-catalog-editor,2023-10-24,piotr.github@karwasz.org
 log4j-audit,log4j-catalog-editor,2023-10-24,robots@logging.apache.org
@@ -465,6 +466,7 @@ log4j-audit,log4j-catalog-editor,2018-06-10,rgoers@apache.org
 log4j-audit,log4j-catalog-editor,2018-04-08,rgoers@apache.org
 log4j-audit,log4j-catalog-editor,2018-03-18,rgoers@apache.org
 log4j-audit,log4j-catalog-editor,2018-03-14,rgoers@apache.org
+log4j-audit,log4j-catalog,2023-10-31,piotr.github@karwasz.org
 log4j-audit,log4j-catalog,2023-10-31,piotr.github@karwasz.org
 log4j-audit,log4j-catalog,2023-10-31,private@logging.apache.org
 log4j-audit,log4j-catalog,2023-10-31,piotr.github@karwasz.org
@@ -642,6 +644,14 @@ log4j-audit,log4j-catalog-jpa,2018-01-16,rgoers@apache.org
 log4j-audit,log4j-catalog-jpa,2017-10-08,rgoers@nextiva.com
 log4j-audit,log4j-catalog-jpa,2017-09-06,rgoers@nextiva.com
 log4j-audit,log4j-catalog-jpa,2017-09-02,rgoers@nextiva.com
+log4j-audit,log4j-audit-parent,2023-10-31,piotr.github@karwasz.org
+log4j-audit,log4j-audit-parent,2023-10-31,private@logging.apache.org
+log4j-audit,log4j-audit-parent,2023-10-31,private@logging.apache.org
+log4j-audit,log4j-audit-parent,2023-10-31,piotr.github@karwasz.org
+log4j-audit,log4j-audit-parent,2023-10-31,piotr.github@karwasz.org
+log4j-audit,log4j-audit-parent,2023-10-31,private@logging.apache.org
+log4j-audit,log4j-audit-parent,2023-10-31,private@logging.apache.org
+log4j-audit,log4j-audit-parent,2023-10-31,private@logging.apache.org
 log4j-audit,log4j-audit-parent,2023-10-31,private@logging.apache.org
 log4j-audit,log4j-audit-parent,2023-10-31,private@logging.apache.org
 log4j-audit,log4j-audit-parent,2023-10-31,private@logging.apache.org
@@ -928,6 +938,7 @@ log4j-audit,log4j-audit-api,2017-10-08,rgoers@nextiva.com
 log4j-audit,log4j-audit-api,2017-09-06,rgoers@nextiva.com
 log4j-audit,log4j-audit-api,2017-09-02,rgoers@nextiva.com
 log4j-audit,log4j-audit,2023-10-31,piotr.github@karwasz.org
+log4j-audit,log4j-audit,2023-10-31,piotr.github@karwasz.org
 log4j-audit,log4j-audit,2023-10-31,private@logging.apache.org
 log4j-audit,log4j-audit,2023-10-31,piotr.github@karwasz.org
 log4j-audit,log4j-audit,2023-10-31,piotr.github@karwasz.org
@@ -1018,6 +1029,7 @@ log4j-audit,log4j-audit,2017-11-11,rgoers@apache.org
 log4j-audit,log4j-audit,2017-10-08,rgoers@nextiva.com
 log4j-audit,log4j-audit,2017-09-06,rgoers@nextiva.com
 log4j-audit,log4j-audit,2017-09-02,rgoers@nextiva.com
+log4j-audit,log4j-audit-war,2023-10-31,piotr.github@karwasz.org
 log4j-audit,log4j-audit-war,2023-10-31,piotr.github@karwasz.org
 log4j-audit,log4j-audit-war,2023-10-31,piotr.github@karwasz.org
 log4j-audit,log4j-audit-war,2023-10-30,piotr.github@karwasz.org
@@ -9887,6 +9899,10 @@ log4j-2,log4j-docker,2019-06-23,ralph.goers@dslextreme.com
 log4j-2,log4j-docker,2019-04-04,rgoers@apache.org
 log4j-2,log4j-docker,2019-03-31,rgoers@apache.org
 log4j-2,log4j-docker,2019-03-21,rgoers@apache.org
+log4j-2,log4j-bom,2023-10-31,private@logging.apache.org
+log4j-2,log4j-bom,2023-10-31,volkan@yazi.ci
+log4j-2,log4j-bom,2023-10-31,volkan@yazi.ci
+log4j-2,log4j-bom,2023-10-31,volkan@yazi.ci
 log4j-2,log4j-bom,2023-10-30,jonas.rutishauser@alumni.ethz.ch
 log4j-2,log4j-bom,2023-10-31,piotr.github@karwasz.org
 log4j-2,log4j-bom,2023-10-31,private@logging.apache.org
@@ -32341,6 +32357,7 @@ log4j-2,log4j-jpl,2020-04-20,rgoers@apache.org
 log4j-2,log4j-jpl,2020-04-20,rgoers@apache.org
 log4j-2,log4j-jpl,2020-04-12,rgoers@apache.org
 log4j-2,log4j-jpl,2020-04-05,rgoers@apache.org
+log4j-2,log4j,2023-10-31,private@logging.apache.org
 log4j-2,log4j,2023-10-31,piotr.github@karwasz.org
 log4j-2,log4j,2023-10-31,private@logging.apache.org
 log4j-2,log4j,2023-10-31,private@logging.apache.org
