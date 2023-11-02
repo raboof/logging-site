@@ -44,4 +44,3 @@ and connect to it with this command:
 ```
 docker run --rm -p 4000:4000 --mount type=bind,src=$PWD,dst=/root/build --mount type=volume,dst=/root/build/node_modules -it  --entrypoint "/bin/bash" apache/logging_site
 ```
-
