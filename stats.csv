@@ -1,4 +1,5 @@
 project,module,instant,author
+log4j-tools,log4j-tools-bom,2023-11-06,private@logging.apache.org
 log4j-tools,log4j-tools-bom,2023-10-26,volkan@yazi.ci
 log4j-tools,log4j-tools-bom,2023-10-24,volkan@yazi.ci
 log4j-tools,log4j-tools-bom,2023-10-20,volkan@yazi.ci
@@ -305,6 +306,7 @@ log4j-tools,log4j-tools-bom,2017-06-28,mikael@staldal.nu
 log4j-tools,log4j-tools-bom,2017-04-21,mikael.staldal@magine.com
 log4j-tools,log4j-tools-bom,2017-04-11,mikael.staldal@magine.com
 log4j-tools,log4j-tools-bom,2016-11-11,ggregory@apache.org
+log4j-tools,log4j-tools-parent,2023-11-06,private@logging.apache.org
 log4j-tools,log4j-tools-parent,2023-09-29,private@logging.apache.org
 log4j-tools,log4j-tools-parent,2023-09-28,49699333+dependabot[bot]@users.noreply.github.com
 log4j-tools,log4j-tools-parent,2023-09-27,volkan@yazi.ci
@@ -2877,6 +2879,8 @@ log4j-audit,log4j-audit-distribution,2018-06-10,rgoers@apache.org
 log4j-audit,log4j-audit-distribution,2018-06-10,rgoers@apache.org
 log4j-audit,log4j-audit-distribution,2018-06-10,rgoers@apache.org
 log4j-audit,log4j-audit-distribution,2017-09-02,rgoers@nextiva.com
+log4j-audit,log4j-audit-parent,2023-11-10,private@logging.apache.org
+log4j-audit,log4j-audit-parent,2023-11-07,private@logging.apache.org
 log4j-audit,log4j-audit-parent,2023-11-03,private@logging.apache.org
 log4j-audit,log4j-audit-parent,2023-11-02,private@logging.apache.org
 log4j-audit,log4j-audit-parent,2023-10-31,piotr.github@karwasz.org
@@ -4758,6 +4762,9 @@ chainsaw,apache-chainsaw,2001-04-14,ceki@apache.org
 chainsaw,apache-chainsaw,2001-04-11,ceki@apache.org
 chainsaw,apache-chainsaw,2000-12-14,ceki@apache.org
 chainsaw,apache-chainsaw,2000-12-14,ceki@apache.org
+log4j-2,log4j-core,2023-11-02,piotr.github@karwasz.org
+log4j-2,log4j-core,2023-10-31,piotr.github@karwasz.org
+log4j-2,log4j-core,2023-10-25,piotr.github@karwasz.org
 log4j-2,log4j-core,2023-11-03,mattsicker@apache.org
 log4j-2,log4j-core,2023-11-03,volkan@yazi.ci
 log4j-2,log4j-core,2023-11-02,volkan@yazi.ci
@@ -10403,6 +10410,7 @@ log4j-2,log4j-core,2013-08-31,nickwilliams@unknown
 log4j-2,log4j-core,2013-08-31,nickwilliams@unknown
 log4j-2,log4j-core,2013-08-27,rpopma@unknown
 log4j-2,log4j-core,2013-08-26,ggregory@apache.org
+log4j-2,log4j-flume-ng,2023-11-06,piotr.github@karwasz.org
 log4j-2,log4j-flume-ng,2023-11-01,volkan@yazi.ci
 log4j-2,log4j-flume-ng,2023-10-11,volkan@yazi.ci
 log4j-2,log4j-flume-ng,2023-10-10,piotr.github@karwasz.org
@@ -11260,6 +11268,7 @@ log4j-2,log4j-web,2014-05-10,rgoers@apache.org
 log4j-2,log4j-web,2014-05-04,mattsicker@unknown
 log4j-2,log4j-web,2014-05-04,mattsicker@unknown
 log4j-2,log4j-web,2014-05-04,mattsicker@unknown
+log4j-2,log4j-1.2-api,2023-11-06,piotr.github@karwasz.org
 log4j-2,log4j-1.2-api,2023-11-01,volkan@yazi.ci
 log4j-2,log4j-1.2-api,2023-10-24,volkan@yazi.ci
 log4j-2,log4j-1.2-api,2023-10-11,volkan@yazi.ci
@@ -11930,6 +11939,20 @@ log4j-2,log4j-1.2-api,2013-09-14,rgoers@apache.org
 log4j-2,log4j-1.2-api,2013-09-13,ggregory@apache.org
 log4j-2,log4j-1.2-api,2013-08-26,rgoers@apache.org
 log4j-2,log4j-1.2-api,2013-08-26,ggregory@apache.org
+log4j-2,log4j-bom,2023-11-11,piotr.github@karwasz.org
+log4j-2,log4j-bom,2023-11-11,private@logging.apache.org
+log4j-2,log4j-bom,2023-11-11,private@logging.apache.org
+log4j-2,log4j-bom,2023-11-10,volkan@yazi.ci
+log4j-2,log4j-bom,2023-11-09,piotr.github@karwasz.org
+log4j-2,log4j-bom,2023-11-08,volkan@yazi.ci
+log4j-2,log4j-bom,2023-11-07,piotr.github@karwasz.org
+log4j-2,log4j-bom,2023-11-06,piotr.github@karwasz.org
+log4j-2,log4j-bom,2023-11-06,piotr.github@karwasz.org
+log4j-2,log4j-bom,2023-11-02,piotr.github@karwasz.org
+log4j-2,log4j-bom,2023-10-31,piotr.github@karwasz.org
+log4j-2,log4j-bom,2023-10-25,piotr.github@karwasz.org
+log4j-2,log4j-bom,2023-11-06,private@logging.apache.org
+log4j-2,log4j-bom,2023-11-06,private@logging.apache.org
 log4j-2,log4j-bom,2023-11-03,mattsicker@apache.org
 log4j-2,log4j-bom,2023-11-03,mattsicker@apache.org
 log4j-2,log4j-bom,2023-11-03,mattsicker@apache.org
@@ -25160,6 +25183,7 @@ log4j-2,log4j-cassandra,2017-11-19,ralph.goers@dslextreme.com
 log4j-2,log4j-cassandra,2017-11-19,ralph.goers@dslextreme.com
 log4j-2,log4j-cassandra,2017-10-19,mikael@staldal.nu
 log4j-2,log4j-cassandra,2017-10-16,mikael@staldal.nu
+log4j-2,log4j-jul,2023-11-06,piotr.github@karwasz.org
 log4j-2,log4j-jul,2023-10-08,piotr.github@karwasz.org
 log4j-2,log4j-jul,2023-10-05,volkan@yazi.ci
 log4j-2,log4j-jul,2023-10-05,volkan@yazi.ci
@@ -26134,6 +26158,7 @@ log4j-2,log4j-spring-boot,2020-08-02,boards@gmail.com
 log4j-2,log4j-spring-boot,2020-08-15,rgoers@apache.org
 log4j-2,log4j-spring-boot,2020-08-15,rgoers@apache.org
 log4j-2,log4j-spring-boot,2020-08-12,rgoers@apache.org
+log4j-2,log4j-api-test,2023-11-06,piotr.github@karwasz.org
 log4j-2,log4j-api-test,2023-11-01,volkan@yazi.ci
 log4j-2,log4j-api-test,2023-10-30,piotr.github@karwasz.org
 log4j-2,log4j-api-test,2023-10-24,piotr.github@karwasz.org
@@ -26745,6 +26770,7 @@ log4j-2,log4j-couchdb,2017-11-19,ralph.goers@dslextreme.com
 log4j-2,log4j-couchdb,2017-11-19,ralph.goers@dslextreme.com
 log4j-2,log4j-couchdb,2017-10-19,mikael@staldal.nu
 log4j-2,log4j-couchdb,2017-10-17,mikael@staldal.nu
+log4j-2,log4j-layout-template-json,2023-11-06,piotr.github@karwasz.org
 log4j-2,log4j-layout-template-json,2023-11-01,volkan@yazi.ci
 log4j-2,log4j-layout-template-json,2023-10-25,volkan@yazi.ci
 log4j-2,log4j-layout-template-json,2023-10-24,volkan@yazi.ci
@@ -27294,6 +27320,11 @@ log4j-2,log4j-jdbc-dbcp2,2018-03-07,rgoers@apache.org
 log4j-2,log4j-jdbc-dbcp2,2018-03-01,garydgregory@gmail.com
 log4j-2,log4j-jdbc-dbcp2,2018-01-18,garydgregory@gmail.com
 log4j-2,log4j-jdbc-dbcp2,2018-01-18,garydgregory@gmail.com
+log4j-2,log4j,2023-11-11,piotr.github@karwasz.org
+log4j-2,log4j,2023-11-11,private@logging.apache.org
+log4j-2,log4j,2023-11-11,private@logging.apache.org
+log4j-2,log4j,2023-11-06,private@logging.apache.org
+log4j-2,log4j,2023-11-06,private@logging.apache.org
 log4j-2,log4j,2023-11-02,private@logging.apache.org
 log4j-2,log4j,2023-11-01,private@logging.apache.org
 log4j-2,log4j,2023-10-31,private@logging.apache.org
@@ -27689,6 +27720,9 @@ log4j-2,log4j-mongodb3,2018-03-11,ralph.goers@dslextreme.com
 log4j-2,log4j-mongodb3,2018-03-11,ralph.goers@dslextreme.com
 log4j-2,log4j-mongodb3,2018-03-01,garydgregory@gmail.com
 log4j-2,log4j-mongodb3,2018-01-25,garydgregory@gmail.com
+log4j-2,log4j-core-test,2023-11-07,piotr.github@karwasz.org
+log4j-2,log4j-core-test,2023-11-06,piotr.github@karwasz.org
+log4j-2,log4j-core-test,2023-10-31,piotr.github@karwasz.org
 log4j-2,log4j-core-test,2023-11-02,volkan@yazi.ci
 log4j-2,log4j-core-test,2023-11-02,volkan@yazi.ci
 log4j-2,log4j-core-test,2023-11-01,volkan@yazi.ci
@@ -28385,6 +28419,8 @@ log4j-2,log4j-iostreams,2014-09-03,garydgregory@gmail.com
 log4j-2,log4j-iostreams,2014-09-03,garydgregory@gmail.com
 log4j-2,log4j-iostreams,2014-09-03,mattsicker@apache.org
 log4j-2,log4j-iostreams,2014-09-03,mattsicker@apache.org
+log4j-2,log4j-api,2023-11-02,piotr.github@karwasz.org
+log4j-2,log4j-api,2023-10-25,piotr.github@karwasz.org
 log4j-2,log4j-api,2023-11-03,mattsicker@apache.org
 log4j-2,log4j-api,2023-11-03,mattsicker@apache.org
 log4j-2,log4j-api,2023-11-03,mattsicker@apache.org
@@ -30253,6 +30289,7 @@ log4j-2,log4j-jcl,2013-12-05,ggregory@apache.org
 log4j-2,log4j-jcl,2013-09-14,rgoers@apache.org
 log4j-2,log4j-jcl,2013-09-14,rgoers@apache.org
 log4j-2,log4j-jcl,2013-08-26,ggregory@apache.org
+log4j-transform,log4j-transform-bom,2023-11-06,private@logging.apache.org
 log4j-transform,log4j-transform-bom,2023-10-26,volkan@yazi.ci
 log4j-transform,log4j-transform-bom,2023-10-20,volkan@yazi.ci
 log4j-transform,log4j-transform-bom,2023-10-20,volkan@yazi.ci
@@ -30439,6 +30476,7 @@ log4j-transform,log4j-maven-it-pomproject,2023-10-03,volkan@yazi.ci
 log4j-transform,log4j-maven-it-pomproject,2023-09-13,volkan@yazi.ci
 log4j-transform,log4j-maven-it-pomproject,2023-04-28,piotr.github@karwasz.org
 log4j-transform,log4j-maven-it-pomproject,2023-04-27,piotr.github@karwasz.org
+log4j-transform,log4j-transform-parent,2023-11-06,private@logging.apache.org
 log4j-transform,log4j-transform-parent,2023-10-03,private@logging.apache.org
 log4j-transform,log4j-transform-parent,2023-10-03,volkan@yazi.ci
 log4j-transform,log4j-transform-parent,2023-09-13,volkan@yazi.ci
@@ -30511,6 +30549,7 @@ log4j-scala,log4j-api-scala_2.13,2023-09-15,volkan@yazi.ci
 log4j-scala,log4j-api-scala_2.13,2018-03-29,boards@gmail.com
 log4j-scala,log4j-api-scala_2.13,2018-03-28,boards@gmail.com
 log4j-scala,log4j-api-scala_2.13,2017-11-11,ggregory@apache.org
+log4j-scala,log4j-api-scala-parent,2023-11-06,flo@geekplace.eu
 log4j-scala,log4j-api-scala-parent,2023-10-26,volkan@yazi.ci
 log4j-scala,log4j-api-scala-parent,2023-10-20,volkan@yazi.ci
 log4j-scala,log4j-api-scala-parent,2023-10-20,volkan@yazi.ci
@@ -30806,6 +30845,7 @@ log4j-scala,log4j-api-scala_2.11,2016-12-30,matt.sicker@spr.com
 log4j-scala,log4j-api-scala_2.11,2016-12-30,matt.sicker@spr.com
 log4j-scala,log4j-api-scala_2.11,2016-11-11,mikael.staldal@magine.com
 log4j-scala,log4j-api-scala_2.11,2016-11-08,mikael.staldal@magine.com
+log4j-scala,log4j-api-scala_3,2023-11-06,flo@geekplace.eu
 log4j-scala,log4j-api-scala_3,2023-10-02,volkan@yazi.ci
 log4j-scala,log4j-api-scala_3,2023-10-02,volkan@yazi.ci
 log4j-scala,log4j-api-scala_3,2023-09-29,pjfanning@users.noreply.github.com
@@ -31143,6 +31183,14 @@ log4j-jmx-gui,log4j-jmx-gui,2014-02-02,rpopma@unknown
 log4j-jmx-gui,log4j-jmx-gui,2013-09-14,rgoers@apache.org
 log4j-jmx-gui,log4j-jmx-gui,2013-09-14,rgoers@apache.org
 log4j-jmx-gui,log4j-jmx-gui,2013-08-26,ggregory@apache.org
+log4cxx,*,2023-11-11,vopl@bk.ru
+log4cxx,*,2023-11-11,stephen.webb@ieee.org
+log4cxx,*,2023-11-10,stephen.webb@ieee.org
+log4cxx,*,2023-11-10,stephen.webb@ieee.org
+log4cxx,*,2023-11-09,vopl@bk.ru
+log4cxx,*,2023-11-09,vopl@bk.ru
+log4cxx,*,2023-11-09,vopl@bk.ru
+log4cxx,*,2023-11-08,vopl@bk.ru
 log4cxx,*,2023-11-03,vopl@bk.ru
 log4cxx,*,2023-11-03,vopl@bk.ru
 log4cxx,*,2023-10-30,robert.middleton@rm5248.com
@@ -33592,6 +33640,7 @@ log4cxx,*,2003-06-09,mcatan@apache.org
 log4cxx,*,2003-06-09,mcatan@apache.org
 log4cxx,*,2003-06-09,mcatan@apache.org
 log4cxx,*,2003-06-09,no_author@no_author
+log4j-kotlin,log4j-api-kotlin-parent,2023-11-06,private@logging.apache.org
 log4j-kotlin,log4j-api-kotlin-parent,2023-10-26,volkan@yazi.ci
 log4j-kotlin,log4j-api-kotlin-parent,2023-10-22,volkan@yazi.ci
 log4j-kotlin,log4j-api-kotlin-parent,2023-10-18,volkan@yazi.ci
