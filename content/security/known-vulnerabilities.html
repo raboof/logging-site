@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Apache Logging Services</title>
+
+    <link href="/css/asciidoctor-default.css" rel="stylesheet" type="text/css" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/site.css" rel="stylesheet" type="text/css" />
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/site.js"></script>
+    <link rel="alternate" type="application/rss+xml" title="ASF Loggin Services" href="/feed.xml">
+</head>
+
+
+<body>
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/">Apache Logging Services&trade;</a>
+            <ul class="nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/guidelines.html">Guidelines</a></li>
+                        <li><a href="/charter.html">Charter</a></li>
+                        <li><a href="/team-list.html">Team</a></li>
+                        <li><a href="/support.html">Support &amp; Help</a></li>
+                        <li><a target="_blank" href="https://cwiki.apache.org/confluence/display/LOGGING/Home">Wiki</a>
+                        <li><a href="/what-is-logging.html">What is logging?</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                            
+                            <li><a href="/log4j/2.x/index.html">Apache Log4j™</a></li>
+                            
+                        
+                            
+                            <li><a href="/log4j/kotlin/index.html">Apache Log4j™ for Kotlin</a></li>
+                            
+                        
+                            
+                            <li><a href="/log4j/scala/index.html">Apache Log4j™ for Scala</a></li>
+                            
+                        
+                            
+                            <li><a href="/log4cxx">Apache log4cxx</a></li>
+                            
+                        
+                            
+                            <li><a href="/chainsaw/2.x/index.html">Apache chainsaw</a></li>
+                            
+                        
+                            
+                            <li><a href="/log4j-audit/latest/index.html">Apache Log4j Audit</a></li>
+                            
+                        
+                            
+                            <li><a href="/log4net">Apache Log4Net</a></li>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dormant<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                            <li><a href="/log4j/1.2/index.html">Apache Log4j 1.x</a></li>
+                            
+                        
+                            
+                            <li><a href="/log4j/extras/index.html">Apache log4j 1 extras</a></li>
+                            
+                        
+                            
+                            <li><a href="/log4php">Apache log4php</a></li>
+                            
+                        
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav">
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+            <ul class="nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Security<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/security/">Handling Security</a></li>
+                        <li><a href="/security/known-vulnerabilities.html">Known Vulnerabilities</a></li>
+                        <li><a href="/activity-monitor/">Activity Monitor</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <ul class="nav pull-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Apache<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a target="_blank" href="https://www.apache.org/">Home</a></li>
+                        <li><a target="_blank" href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+                        <li><a target="_blank" href="https://www.apache.org/licenses/">License</a></li>
+                        <li><a target="_blank" href="https://www.apache.org/foundation/thanks.html">Thanks</a></li>
+                        <li><a target="_blank" href="https://www.apache.org/events/current-event.html">Current Events</a></li>
+                        <li><a target="_blank" href="https://www.apache.org/security/">Security</a></li>
+                        <li><a target="_blank" href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="content">
+        <div class="sect1">
+<h2 id="vulnerabilities">Known vulnerabilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Logging Services Security Team believes that accuracy, completeness and availability of security information is essential for our users.
+We choose to pool all information on this one page, allowing easy searching for security vulnerabilities over a range of criteria.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>We adhere to <a href="https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">the Maven version range syntax</a> while sharing versions of affected components.
+We only extend this mathematical notation with set union operator (i.e., <code>∪</code>) to denote union of multiple ranges.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="CVE-2021-44832"><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-44832">CVE-2021-44832</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Summary</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JDBC appender is vulnerable to remote code execution in certain configurations</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">CVSS 3.x Score &amp; Vector</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.6 MEDIUM (CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Components affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>log4j-core</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[2.0-beta7, 2.3.2) ∪ [2.4, 2.12.4) ∪ [2.13.0, 2.17.1)</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions fixed</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2.3.2</code> (for Java 6), <code>2.12.4</code> (for Java 7), or <code>2.17.1</code> (for Java 8 and later)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="CVE-2021-44832-description">Description</h4>
+<div class="paragraph">
+<p>An attacker with write access to the logging configuration can construct a malicious configuration using a JDBC Appender with a data source referencing a JNDI URI which can execute remote code.
+This issue is fixed by limiting JNDI data source names to the <code>java</code> protocol.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2021-44832-mitigation">Mitigation</h4>
+<div class="paragraph">
+<p>Upgrade to <code>2.3.2</code> (for Java 6), <code>2.12.4</code> (for Java 7), or <code>2.17.1</code> (for Java 8 and later).</p>
+</div>
+<div class="paragraph">
+<p>In prior releases confirm that if the JDBC Appender is being used it is not configured to use any protocol other than <code>java</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2021-44832-references">References</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-44832">CVE-2021-44832</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="CVE-2021-45105"><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-45105">CVE-2021-45105</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Summary</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Infinite recursion in lookup evaluation</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">CVSS 3.x Score &amp; Vector</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.9 MEDIUM (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Components affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>log4j-core</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[2.0-alpha1, 2.3.1) ∪ [2.4, 2.12.3) ∪ [2.13.0, 2.17.0)</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions fixed</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2.3.1</code> (for Java 6), <code>2.12.3</code> (for Java 7), and <code>2.17.0</code> (for Java 8 and later)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="CVE-2021-45105-description">Description</h4>
+<div class="paragraph">
+<p>Log4j versions <code>2.0-alpha1</code> through <code>2.16.0</code> (excluding <code>2.3.1</code> and <code>2.12.3</code>), did not protect from uncontrolled recursion that can be implemented using self-referential lookups.
+When the logging configuration uses a non-default Pattern Layout with a Context Lookup (for example, <code>$${ctx:loginId}</code>), attackers with control over Thread Context Map (MDC) input data can craft malicious input data that contains a recursive lookup, resulting in a <code>StackOverflowError</code> that will terminate the process.
+This is also known as a <em>DoS (Denial-of-Service)</em> attack.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2021-45105-mitigation">Mitigation</h4>
+<div class="paragraph">
+<p>Upgrade to <code>2.3.1</code> (for Java 6), <code>2.12.3</code> (for Java 7), or <code>2.17.0</code> (for Java 8 and later).</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, this infinite recursion issue can be mitigated in configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In PatternLayout in the logging configuration, replace Context Lookups like <code>${ctx:loginId}</code> or <code>$${ctx:loginId}</code> with Thread Context Map patterns (<code>%X</code>, <code>%mdc</code>, or <code>%MDC</code>).</p>
+</li>
+<li>
+<p>Otherwise, in the configuration, remove references to Context Lookups like <code>${ctx:loginId}</code> or <code>$${ctx:loginId}</code> where they originate
+from sources external to the application such as HTTP headers or user input.
+Note that this mitigation is insufficient in releases older than <code>2.12.2</code> (for Java 7), and <code>2.16.0</code> (for Java 8 and later) as the issues fixed in those releases will still be present.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note that only the <code>log4j-core</code> JAR file is impacted by this vulnerability.
+Applications using only the <code>log4j-api</code> JAR file without the <code>log4j-core</code> JAR file are not impacted by this vulnerability.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2021-45105-credits">Credits</h4>
+<div class="paragraph">
+<p>Independently discovered by Hideki Okamoto of Akamai Technologies, Guy Lederfein of Trend Micro Research working with Trend Micro&#8217;s Zero Day Initiative, and another anonymous vulnerability researcher.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2021-45105-references">References</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-45105">CVE-2021-45105</a></p>
+</li>
+<li>
+<p><a href="https://issues.apache.org/jira/browse/LOG4J2-3230">LOG4J2-3230</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="CVE-2021-45046"><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-45046">CVE-2021-45046</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Summary</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thread Context Lookup is vulnerable to remote code execution in certain configurations</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">CVSS 3.x Score &amp; Vector</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9.0 CRITICAL (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Components affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>log4j-core</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[2.0-beta9, 2.3.1) ∪ [2.4, 2.12.3) ∪ [2.13.0, 2.17.0)</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions fixed</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2.3.1</code> (for Java 6), <code>2.12.3</code> (for Java 7), and <code>2.17.0</code> (for Java 8 and later)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="CVE-2021-45046-description">Description</h4>
+<div class="paragraph">
+<p>It was found that the fix to address <a href="#CVE-2021-44228">CVE-2021-44228</a> in Log4j <code>2.15.0</code> was incomplete in certain non-default configurations.
+When the logging configuration uses a non-default Pattern Layout with a Thread Context Lookup (for example, <code>$${ctx:loginId}</code>), attackers with control over Thread Context Map (MDC) can craft malicious input data using a JNDI Lookup pattern, resulting in an information leak and remote code execution in some environments and local code execution in all environments.
+Remote code execution has been demonstrated on macOS, Fedora, Arch Linux, and Alpine Linux.</p>
+</div>
+<div class="paragraph">
+<p>Note that this vulnerability is not limited to just the JNDI lookup.
+Any other Lookup could also be included in a Thread Context Map variable and possibly have private details exposed to anyone with access to the logs.</p>
+</div>
+<div class="paragraph">
+<p>Note that only the <code>log4j-core</code> JAR file is impacted by this vulnerability.
+Applications using only the <code>log4j-api</code> JAR file without the <code>log4j-core</code> JAR file are not impacted by this vulnerability.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2021-45046-mitigation">Mitigation</h4>
+<div class="paragraph">
+<p>Upgrade to Log4j <code>2.3.1</code> (for Java 6), <code>2.12.3</code> (for Java 7), or <code>2.17.0</code> (for Java 8 and later).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2021-45046-credits">Credits</h4>
+<div class="paragraph">
+<p>This issue was discovered by Kai Mindermann of iC Consult and separately by 4ra1n.</p>
+</div>
+<div class="paragraph">
+<p>Additional vulnerability details discovered independently by Ash Fox of Google, Alvaro Muñoz and Tony Torralba from GitHub, Anthony Weems of Praetorian, and RyotaK (@ryotkak).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2021-45046-references">References</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-45046">CVE-2021-45046</a></p>
+</li>
+<li>
+<p><a href="https://issues.apache.org/jira/browse/LOG4J2-3221">LOG4J2-3221</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="CVE-2021-44228"><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-44228">CVE-2021-44228</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Summary</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JNDI lookup can be exploited to execute arbitrary code loaded from an LDAP server</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">CVSS 3.x Score &amp; Vector</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.0 CRITICAL (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Components affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>log4j-core</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[2.0-beta9, 2.3.1) ∪ [2.4, 2.12.3) ∪ [2.13.0, 2.17.0)</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions fixed</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2.3.1</code> (for Java 6), <code>2.12.3</code> (for Java 7), and <code>2.17.0</code> (for Java 8 and later)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="CVE-2021-44228-description">Description</h4>
+<div class="paragraph">
+<p>In Log4j, the JNDI features used in configurations, log messages, and parameters do not protect against attacker-controlled LDAP and other JNDI related endpoints.
+An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers.</p>
+</div>
+<div class="paragraph">
+<p>Note that only the <code>log4j-core</code> JAR file is impacted by this vulnerability.
+Applications using only the <code>log4j-api</code> JAR file without the <code>log4j-core</code> JAR file are not impacted by this vulnerability.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2021-44228-mitigation">Mitigation</h4>
+<div class="sect4">
+<h5 id="CVE-2021-44228-mitigation-log4j1">Log4j 1 mitigation</h5>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><a href="http://logging.apache.org/log4j/1.x">Log4j 1</a> has <a href="https://blogs.apache.org/foundation/entry/apache_logging_services_project_announces">reached End of Life</a> in 2015, and is no longer supported.
+Vulnerabilities reported after August 2015 against Log4j 1 are not checked and will not be fixed.
+Users should <a href="manual/migration.html">upgrade to Log4j 2</a> to obtain security fixes.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Log4j 1 does not have Lookups, so the risk is lower.
+Applications using Log4j 1 are only vulnerable to this attack when they use JNDI in their configuration.
+A separate CVE (<a href="https://nvd.nist.gov/vuln/detail/CVE-2021-4104">CVE-2021-4104</a>) has been filed for this vulnerability.
+To mitigate, audit your logging configuration to ensure it has no <code>JMSAppender</code> configured.
+Log4j 1 configurations without <code>JMSAppender</code> are not impacted by this vulnerability.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="CVE-2021-44228-mitigation-log4j2">Log4j 2 mitigation</h5>
+<div class="paragraph">
+<p>Upgrade to Log4j <code>2.3.1</code> (for Java 6), <code>2.12.3</code> (for Java 7), or <code>2.17.0</code> (for Java 8 and later).</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2021-44228-credits">Credits</h4>
+<div class="paragraph">
+<p>This issue was discovered by Chen Zhaojun of Alibaba Cloud Security Team.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2021-44228-references">References</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2021-44228">CVE-2021-44228</a></p>
+</li>
+<li>
+<p><a href="https://issues.apache.org/jira/browse/LOG4J2-3198">LOG4J2-3198</a></p>
+</li>
+<li>
+<p><a href="https://issues.apache.org/jira/browse/LOG4J2-3201">LOG4J2-3201</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="CVE-2020-9488"><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-9488">CVE-2020-9488</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Summary</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Improper validation of certificate with host mismatch in SMTP appender</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">CVSS 3.x Score &amp; Vector</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.7 LOW (CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:N)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Components affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>log4j-core</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[2.0-beta1, 2.12.3) ∪ [2.13.1, 2.13.2)</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions fixed</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2.12.3</code> (Java 7) and <code>2.13.2</code> (Java 8 and later)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="CVE-2020-9488-description">Description</h4>
+<div class="paragraph">
+<p>Improper validation of certificate with host mismatch in SMTP appender.
+This could allow an SMTPS connection to be intercepted by a man-in-the-middle attack which could leak any log
+messages sent through that appender.</p>
+</div>
+<div class="paragraph">
+<p>The reported issue was caused by an error in <code>SslConfiguration</code>.
+Any element using <code>SslConfiguration</code> in the Log4j <code>Configuration</code> is also affected by this issue.
+This includes <code>HttpAppender</code>, <code>SocketAppender</code>, and <code>SyslogAppender</code>.
+Usages of <code>SslConfiguration</code> that are configured via system properties are not affected.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2020-9488-mitigation">Mitigation</h4>
+<div class="paragraph">
+<p>Upgrade to <code>2.12.3</code> (Java 7) or <code>2.13.2</code> (Java 8 and later).</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, users can set the <code>mail.smtp.ssl.checkserveridentity</code> system property to <code>true</code> to enable SMTPS hostname verification for all SMTPS mail sessions.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2020-9488-credits">Credits</h4>
+<div class="paragraph">
+<p>This issue was discovered by Peter Stöckli.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2020-9488-references">References</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2020-9488">CVE-2020-9488</a></p>
+</li>
+<li>
+<p><a href="https://issues.apache.org/jira/browse/LOG4J2-2819">LOG4J2-2819</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="CVE-2017-5645"><a href="https://nvd.nist.gov/vuln/detail/CVE-2017-5645">CVE-2017-5645</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Summary</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TCP/UDP socket servers can be exploited to execute arbitrary code</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">CVSS 2.0 Score &amp; Vector</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.5 HIGH (AV:N/AC:L/Au:N/C:P/I:P/A:P)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Components affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>log4j-core</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions affected</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[2.0-alpha1, 2.8.2)</code></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Versions fixed</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2.8.2</code> (Java 7)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="CVE-2017-5645-description">Description</h4>
+<div class="paragraph">
+<p>When using the TCP socket server or UDP socket server to receive serialized log events from another application, a specially crafted binary payload can be sent that, when deserialized, can execute arbitrary code.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2017-5645-mitigation">Mitigation</h4>
+<div class="paragraph">
+<p>Java 7 and above users should migrate to version <code>2.8.2</code> or avoid using the socket server classes.
+Java 6 users should avoid using the TCP or UDP socket server classes, or they can manually backport <a href="https://github.com/apache/logging-log4j2/commit/5dcc192">the security fix commit</a> from <code>2.8.2</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2017-5645-credits">Credits</h4>
+<div class="paragraph">
+<p>This issue was discovered by Marcio Almeida de Macedo of Red Team at Telstra.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="CVE-2017-5645-references">References</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2017-5645">CVE-2017-5645</a></p>
+</li>
+<li>
+<p><a href="https://issues.apache.org/jira/browse/LOG4J2-1863">LOG4J2-1863</a></p>
+</li>
+<li>
+<p><a href="https://github.com/apache/logging-log4j2/commit/5dcc192">Security fix commit</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    
+<div class="footer">
+        <p>
+            Copyright © 2017-2023 <a href="https://www.apache.org" target="external">The Apache Software Foundation</a>.
+            Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0"
+            target="external">Apache Software License, Version 2.0</a> Please read our <a href="https://privacy.apache.org/policies/privacy-policy-public.html">privacy policy</a>.
+        </p><p>
+            Apache, Apache chainsaw, Apache log4cxx, Apache log4j, Apache log4net, Apache log4php and the Apache
+            feather logo are trademarks of The Apache Software Foundation.	Oracle and Java are registered trademarks
+            of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.
+        </p><p>
+            Site powered by <a href="https://getbootstrap.com/" target="external">Bootstrap</a>
+            and <a href="https://jquery.com/" target="external">jQuery</a>.
+        </p>
+</div>
+
+</div>
+</body>
+</html>

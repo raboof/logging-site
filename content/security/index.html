@@ -145,55 +145,99 @@
 
 <div class="container">
     <div class="content">
-        <h3 id="dormant-projects">Dormant Projects</h3>
-
-<p>These are Logging Services Projects that have been deemed inactive since they have seen little recent
-development activity or have reached end-of-life. If you wish to use any of these components, you must
-build them yourselves. It is best to assume that these components will not be released in the near 
-future.</p>
-
-<div class="projects">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-      <div class="project">
-        <h2>Apache Log4j 1.x</h2>
-        <p>The original Log4j. Reached End-Of-Life August 2015.</p>
-        <p><a target="_blank" class="btn" href="/log4j/1.2/index.html">Project site &raquo;</a></p>
-      </div>
-      
-    
-      
-      <div class="project">
-        <h2>Apache log4j 1 extras</h2>
-        <p>Extras for log4j 1.x, like companions, receivers and more.</p>
-        <p><a target="_blank" class="btn" href="/log4j/extras/index.html">Project site &raquo;</a></p>
-      </div>
-      
-    
-      
-      <div class="project">
-        <h2>Apache log4php</h2>
-        <p>A versatile logging framework for PHP. Originally a port of Apache log4j to PHP, it has grown to include various PHP specific features.</p>
-        <p><a target="_blank" class="btn" href="/log4php">Project site &raquo;</a></p>
-      </div>
-      
-          
+        <div class="sect1">
+<h2 id="security">Security</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Apache Logging Services Security Team takes security seriously.
+This allows our users to place their trust in Log4j for protecting their mission-critical data.
+In this page we will help you find guidance on security-related issues and access to known vulnerabilities.</p>
 </div>
-
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><a href="http://logging.apache.org/log4j/1.x">Log4j 1</a> has <a href="https://blogs.apache.org/foundation/entry/apache_logging_services_project_announces">reached End of Life</a> in 2015, and is no longer supported.
+Vulnerabilities reported after August 2015 against Log4j 1 are not checked and will not be fixed.
+Users should <a href="manual/migration.html">upgrade to Log4j 2</a> to obtain security fixes.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="support">Getting support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you need help on building or configuring any logging component such as Log4j or other help on following the instructions to mitigate the known vulnerabilities listed here, please use our <a href="../support.html#discussions">user support channels</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you need to apply a source code patch, use the building instructions for the Log4j version that you are using.
+These instructions can be found in <code>BUILDING.md</code> distributed with the sources.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reporting">Reporting vulnerabilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you have encountered an unlisted security vulnerability or other unexpected behaviour that has a security impact, or if the descriptions here are incomplete, please report them <strong>privately</strong> to <a href="mailto:security@logging.apache.org">the Logging Services Security Team</a>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The threat model that Log4j uses considers configuration files as safe input controlled by the programmer; <strong>potential vulnerabilities that require the ability to modify a configuration are not considered vulnerabilities</strong> as the required access to do so implies the attacker can execute arbitrary code.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="policy">Vulnerability handling policy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Apache Logging Services Security Team follows the <a href="https://www.apache.org/security/committers.html">ASF Project Security</a> guide for handling security vulnerabilities.</p>
+</div>
+<div class="paragraph">
+<p>Reported security vulnerabilities are subject to voting (by means of <a href="https://logging.apache.org/guidelines.html"><em>lazy approval</em></a>, preferably) in the private <a href="mailto:security@logging.apache.org">security mailing list</a> before creating a CVE and populating its associated content.
+This procedure involves only the creation of CVEs and blocks neither (vulnerability) fixes, nor releases.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vdr">Vulnerability Disclosure Report (VDR)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Starting with version <code>2.22.0</code>, Log4j distributes <a href="https://cyclonedx.org/capabilities/vdr">CycloneDX Software Bill of Materials (SBOM)</a> along with each deployed artifact.
+Produced SBOMs contain BOM-links referring to a <a href="https://cyclonedx.org/capabilities/vdr">CycloneDX Vulnerability Disclosure Report (VDR)</a> that Apache Logging Services uses for all projects it maintains.
+All this is streamlined by <code>logging-parent</code>, see <a href="https://logging.apache.org/logging-parent/latest/#cyclonedx-sbom">its website</a> for details.</p>
+</div>
+</div>
+</div>
     </div>
     
 <div class="footer">
