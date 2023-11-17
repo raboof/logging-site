@@ -1,1 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-11-17T23:54:26+00:00</updated><id>/feed.xml</id><title type="html">Apache Software Foundation - Logging Services</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-11-17T23:56:42+00:00</updated><id>/feed.xml</id><title type="html">Apache Software Foundation - Logging Services</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcoming Flume to ASF Logging Services</title><link href="/blog/2023/11/17/flume-joins-logging-services.html" rel="alternate" type="text/html" title="Welcoming Flume to ASF Logging Services" /><published>2023-11-17T00:00:00+00:00</published><updated>2023-11-17T00:00:00+00:00</updated><id>/blog/2023/11/17/flume-joins-logging-services</id><content type="html" xml:base="/blog/2023/11/17/flume-joins-logging-services.html"><![CDATA[<h1 id="welcoming-the-flume-team-to-logging-services">Welcoming the Flume Team to Logging Services</h1>
+
+<p>We are excited to announce that <strong>Apache Flume</strong> is now a part of our Logging Services family. 
+Flume is renowned for its distributed, reliable, and available service, specializing 
+in efficiently collecting, aggregating, and moving large volumes of log data.</p>
+
+<p>The journey of Flume has been remarkable. Unfortunately, the Flume team had struggles
+with growing and remained a small team. Still, they caught the attention
+of several Logging Services committers. Impressed by its 
+capabilities and potential, both the Flume community and our team saw a 
+unique opportunity for collaboration and bringing to small teams together.</p>
+
+<h2 id="a-unified-force-in-logging">A Unified Force in Logging</h2>
+
+<p>This integration is more than just a merger of two services; it’s the coming 
+together of like-minded communities aiming for excellence in logging solutions. 
+The decision to merge was driven by our shared vision of offering robust, 
+scalable, and efficient logging services.</p>
+
+<h2 id="extending-our-portfolio">Extending Our Portfolio</h2>
+
+<p>Flume’s addition significantly extends our own Logging portfolio. Its unique approach 
+to handling large-scale log data complements our existing solutions, creating a 
+more comprehensive suite of tools for our users.</p>
+
+<h2 id="looking-forward">Looking Forward</h2>
+
+<p>Plans are already underway to push Flume to a new release, one that incorporates 
+our combined expertise and the latest in logging technology.</p>
+
+<h2 id="free-and-open-source-apache-license">Free and Open Source, Apache License</h2>
+
+<p>As always, Apache Flume is developed under the Apache License. You can find its 
+source code <a href="https://github.com/apache/flume">here</a>. While we are still merging
+our efforts, you can already contribute and send pull requests. We value the 
+principles of open source and encourage the community to participate in 
+Flume’s ongoing development.</p>
+
+<h2 id="join-us">Join Us</h2>
+
+<p>We are also opening our doors wider, welcoming new contributors and other 
+interested individuals who wish to be part of this exciting journey. Whether 
+you’re an experienced developer or just starting out, there’s a place for you here.</p>
+
+<p>If you’re as excited about this development as we are and want to learn more 
+or contribute, we encourage you to reach out. Let’s shape the future of logging services together!</p>]]></content><author><name></name></author><category term="Logging Services" /><category term="Flume" /><summary type="html"><![CDATA[Flume joins the Logging Services project, bringing its powerful data aggregation capabilities to enhance our logging solutions.]]></summary></entry></feed>
