@@ -22,3 +22,5 @@
 .DS_Store
 .jekyll-cache
 _site
+.vscode
+Gemfile.lock
