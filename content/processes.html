@@ -152,66 +152,129 @@
 
 <div class="container">
     <div class="content">
-      <div class="hero-unit">
-      
-        
-        <h1>Welcoming Apache Flume to Apache Logging Services</h1>
-        <p>Apache Flume joins the Apache Logging Services project, bringing its powerful data aggregation capabilities to enhance our logging solutions.</p>
-      </div>
-      <time itemprop="datePublished" datetime="2023-11-17">
-        17 Nov 2023
-      </time>
-      
-      <div itemprop="text"><h1 id="welcoming-the-apache-flume-team-to-apache-logging-services">Welcoming the Apache Flume Team to Apache Logging Services</h1>
+        <h1 id="project-processes">Project Processes</h1>
 
-<p>We are excited to announce that <a href="https://flume.apache.org"><strong>Apache Flume</strong></a> is now a part of our Logging Services family. 
-Flume is renowned for its distributed, reliable, and available service, specializing 
-in efficiently collecting, aggregating, and moving large volumes of log data.</p>
+<h3 id="apache-logging-services-project-processeschecklists">Apache Logging Services Project Processes/Checklists</h3>
 
-<p>The journey of Flume has been remarkable. Unfortunately, the Flume team had struggles
-with growing and remained a small team. Still, they caught the attention
-of several Logging Services committers. Impressed by its 
-capabilities and potential, both the Flume community and our team saw a 
-unique opportunity for collaboration and bringing two small teams together.</p>
+<p>Here we describe some of the processes we use.</p>
 
-<h2 id="a-unified-force-in-logging">A Unified Force in Logging</h2>
+<ul>
+  <li>Retire a subproject or component</li>
+  <li>Reactivate a subproject or component</li>
+</ul>
 
-<p>This integration is more than just a merger of two services; it’s the coming 
-together of like-minded communities aiming for excellence in logging solutions. 
-The decision to merge was driven by our shared vision of offering robust, 
-scalable, and efficient logging services.</p>
+<h3 id="retire-a-subproject-or-component">Retire a subproject or component</h3>
 
-<h2 id="extending-our-portfolio">Extending Our Portfolio</h2>
+<p>The process starts by a format vote by the PMC on the main development mailing list.
+Basically, we have to announce it and make resources read-only.</p>
 
-<p>Flume’s addition significantly extends our own Logging portfolio. Its unique approach 
-to handling large-scale log data complements our existing solutions, creating a 
-more comprehensive suite of tools for our users.</p>
+<ul>
+  <li>Version Control</li>
+  <li>Issue Tracker</li>
+  <li>Announcement</li>
+  <li>Build Jobs</li>
+  <li>Landing Page</li>
+  <li>Homepage</li>
+  <li>Releases</li>
+</ul>
 
-<h2 id="looking-forward">Looking Forward</h2>
+<h4 id="retire-version-control">Retire: Version Control</h4>
 
-<p>Plans are already underway to push Flume to a new release, one that incorporates 
-our combined expertise and the latest in logging technology.</p>
+<p>Most of our source code is in git, only “site” and “sandbox” use GIT. 
+We place a marker RETIRED_PROJECT file on the top level.
+Add a note at the top of a README file as well so it is immediately visible 
+to people browsing the GitHub mirror. Include a link to this page for a 
+possible future reactivation and a link to the vote result. <br />
+Ask infra to make the repository read-only.</p>
 
-<h2 id="free-and-open-source-apache-license">Free and Open Source, Apache License</h2>
+<h4 id="retire-issue-tracker">Retire: Issue Tracker</h4>
 
-<p>As always, Apache Flume is developed under the Apache License. You can find its 
-source code <a href="https://github.com/apache/flume">here</a>. While we are still merging
-our efforts, you can already contribute and send pull requests. We value the 
-principles of open source and encourage the community to participate in 
-Flume’s ongoing development.</p>
+<p>If the subproject/component has its own issue tracker, we have to close that. 
+It is enough to make it read-only, so these information are longer available.</p>
 
-<h2 id="join-us">Join Us</h2>
+<h4 id="retire-mailing-list">Retire: Mailing List</h4>
 
-<p>We are also opening our doors wider, welcoming new contributors and other 
-interested individuals who wish to be part of this exciting journey. Whether 
-you’re an experienced developer or just starting out, there’s a place for you here.</p>
+<p>If the subproject/component has its own mailing list, we have to close this. 
+We should send a final email.</p>
 
-<p>If you’re as excited about this development as we are and want to learn more 
-or contribute, we encourage you to reach out. Let’s shape the future of logging services together!</p>
+<h4 id="retire-announcement">Retire: Announcement</h4>
 
+<p>We have to announce the retirement of the subproject at dev@, users@
+and the Logging blog main page.</p>
+
+<h4 id="retire-move-section-of-the-landing-page">Retire: Move section of the landing page</h4>
+
+<p>Move the project from the landing page to the “Dormant projects”.</p>
+
+<h4 id="retire-homepage">Retire: Homepage</h4>
+
+<p>Add the retirement to the archive page.</p>
+
+<h4 id="retire-releases">Retire: Releases</h4>
+
+<p>The last released artifacts, if any, should be removed from the Apache 
+distribution server. To do so, remove any artifact related to the retired 
+subproject in dist.apache.org (it is managed with subversion). 
+Note: as every Apache release, nothing is deleted but everything is archived, 
+the artifacts will still be available at archive.apache.org 
+(or for Incubator releases).</p>
+
+<h3 id="reactivate-a-subproject-or-component">Reactivate a subproject or component</h3>
+
+<p>The process starts by a format vote by the Ant PMC on the main development mailing list. Basically, we have to announce it and make resources read-write again.</p>
+
+<ul>
+  <li>Version Control</li>
+  <li>Issue Tracker</li>
+  <li>Mailing List</li>
+  <li>Announcement</li>
+  <li>Build Jobs</li>
+  <li>Landing Page</li>
+  <li>Homepage</li>
+  <li>Releases</li>
+</ul>
+
+<h4 id="reactivate-version-control">Reactivate: Version Control</h4>
+
+<p>Delete the marker file “RETIRED_PROJECT”. <br />
+Delete the note at the top of a README file as well so it is 
+immediately visible to people browsing the GitHub mirror. <br />
+Ask infra to make the repository read-write again.</p>
+
+<h4 id="reactivate-issue-tracker">Reactivate: Issue Tracker</h4>
+
+<p>If the subproject/component has its own issue tracker, we have to reopen that.</p>
+
+<h4 id="reactivate-mailing-list">Reactivate: Mailing List</h4>
+
+<p>Because reopening implies a smaller community, we should use the
+main mailing list dev@. So reactivating a special list is not required 
+and could be postponed to a later PMC decision.</p>
+
+<h4 id="reactivate-announcement">Reactivate: Announcement</h4>
+
+<p>Announce the reactivation of the subproject at dev@.</p>
+
+<h4 id="reactivate-build-jobs">Reactivate: Build Jobs</h4>
+
+<p>Build jobs, as required.</p>
+
+<h4 id="reactivate-move-section-of-the-landing-page">Reactivate: Move section of the landing page</h4>
+
+<p>Move the project from the landing page from the “dormant projects” to 
+the “active projects.”</p>
+
+<h4 id="reactivate-homepage">Reactivate: Homepage</h4>
+
+<p>Remove the component from the archive page.</p>
+
+<h4 id="reactivate-releases">Reactivate: Releases</h4>
+
+<p>No action needed.</p>
+
+    </div>    
 </div>
-    </div>
-</div>
+
 
 <div class="footer">
     <div class="container">
