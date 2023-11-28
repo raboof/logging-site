@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-11-27T15:27:10+00:00</updated><id>/feed.xml</id><title type="html">Apache Software Foundation - Logging Services</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcoming Apache Flume to Apache Logging Services</title><link href="/blog/2023/11/17/flume-joins-logging-services.html" rel="alternate" type="text/html" title="Welcoming Apache Flume to Apache Logging Services" /><published>2023-11-17T00:00:00+00:00</published><updated>2023-11-17T00:00:00+00:00</updated><id>/blog/2023/11/17/flume-joins-logging-services</id><content type="html" xml:base="/blog/2023/11/17/flume-joins-logging-services.html"><![CDATA[<h1 id="welcoming-the-apache-flume-team-to-apache-logging-services">Welcoming the Apache Flume Team to Apache Logging Services</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-11-28T19:14:30+00:00</updated><id>/feed.xml</id><title type="html">Apache Software Foundation - Logging Services</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcoming Stephen Webb to the Apache Logging Services PMC</title><link href="/blog/2023/11/28/new-pmc-member.html" rel="alternate" type="text/html" title="Welcoming Stephen Webb to the Apache Logging Services PMC" /><published>2023-11-28T00:00:00+00:00</published><updated>2023-11-28T00:00:00+00:00</updated><id>/blog/2023/11/28/new-pmc-member</id><content type="html" xml:base="/blog/2023/11/28/new-pmc-member.html"><![CDATA[<h1 id="welcoming-stephen-webb-to-the-apache-logging-services-community">Welcoming Stephen Webb to the Apache Logging Services community</h1>
+
+<p>We are thrilled to take this moment to celebrate and acknowledge Stephen Webb, 
+who joined the Apache Logging Services community back in 2020. 
+Stephen’s journey with us has been nothing short of remarkable, 
+especially his substantial contributions to the Log4cxx project.</p>
+
+<p>Stephen’s work has played a vital role in enhancing Log4cxx, showcasing 
+his expertise and dedication to improving our logging solutions.</p>
+
+<p>That’s why we invited Stephen to the Apache Logging Services PMC.</p>
+
+<h2 id="a-community-built-on-collaboration-and-innovation">A Community built on collaboration and innovation</h2>
+
+<p>The Apache Logging Services community is a vibrant and dynamic group, 
+united by our passion for open-source software and our commitment to 
+delivering top-notch logging solutions. We’re proud of the 
+collaborative environment we’ve fostered, where ideas thrive and innovation 
+is the norm.</p>
+
+<h2 id="open-arms-for-newcomers">Open arms for newcomers</h2>
+
+<p>In the spirit of growth and learning, we also want to extend a warm 
+welcome to newcomers. Whether you’re an experienced developer or just starting,
+Apache Logging Services is a place where you can contribute, learn, and grow. 
+Our community is always glad to help, guide, and collaborate with 
+anyone who shares our passion for open-source software and logging solutions.</p>
+
+<p>Please reach out using GitHub Issues/Discussions or our mailing lists.</p>
+
+<p>Join us, if you want to be part of our project. Let’s build together!</p>]]></content><author><name></name></author><category term="Logging Services" /><category term="Apache" /><category term="Community" /><category term="Open Source" /><summary type="html"><![CDATA[Highlighting the impactful journey of Stephen Webb with Apache Logging Services since 2020, and his notable contributions to Log4cxx.]]></summary></entry><entry><title type="html">Welcoming Apache Flume to Apache Logging Services</title><link href="/blog/2023/11/17/flume-joins-logging-services.html" rel="alternate" type="text/html" title="Welcoming Apache Flume to Apache Logging Services" /><published>2023-11-17T00:00:00+00:00</published><updated>2023-11-17T00:00:00+00:00</updated><id>/blog/2023/11/17/flume-joins-logging-services</id><content type="html" xml:base="/blog/2023/11/17/flume-joins-logging-services.html"><![CDATA[<h1 id="welcoming-the-apache-flume-team-to-apache-logging-services">Welcoming the Apache Flume Team to Apache Logging Services</h1>
 
 <p>We are excited to announce that <a href="https://flume.apache.org"><strong>Apache Flume</strong></a> is now a part of our Logging Services family. 
 Flume is renowned for its distributed, reliable, and available service, specializing 
